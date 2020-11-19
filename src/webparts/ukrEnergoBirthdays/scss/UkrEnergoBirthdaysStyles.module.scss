@@ -1,0 +1,377 @@
+@import '~office-ui-fabric-react/dist/sass/References.scss';
+
+.ukrEnergoCalendarStyle {
+  .title {
+    @include ms-font-xl;
+    @include ms-fontColor-themeDark;
+  }
+  .subTitle {
+    @include ms-font-l;
+    @include ms-fontColor-themeDark;
+  }
+  .description {
+    @include ms-font-l;
+    @include ms-fontColor-neutralDark;
+  }
+
+  .webPartContainer {
+    @include ms-Grid;
+    width: 100%;
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2), 0 25px 50px 0 rgba(0, 0, 0, 0.1);
+    padding-top: 10px;
+
+    .webPartRow {    
+      @include ms-Grid-row;
+      @include ms-bgColor-white;
+
+      .listContainer {
+        @include ms-Grid-col;
+        width: 33%;
+        padding: 5px 0px 5px 20px;
+
+        .listRow {
+          @include ms-fontColor-themeDark;
+        }
+      }
+    
+      .calendarContainer {
+        @include ms-Grid-col;
+        width: 66%;
+        padding: 0;
+
+        .calendarRow {
+          @include ms-fontColor-themeDark;
+        }
+      }
+    }
+  }
+
+  @media (max-width: 900px) {
+    .webPartContainer {
+      @include ms-Grid;
+      width: 100%;
+  
+      .webPartRow {    
+        @include ms-Grid-row;
+        @include ms-bgColor-white;
+  
+        .listContainer {
+          @include ms-Grid-col;
+          width: 100%;
+  
+          .listRow {
+            @include ms-fontColor-themeDark;
+          }
+        }
+      
+        .calendarContainer {
+          @include ms-Grid-col;
+          width: 100%;
+  
+          .calendarRow {
+            @include ms-fontColor-themeDark;
+          }
+        }
+      }
+    }   
+  }
+  
+  .monthColumn {
+    @include ms-Grid-col;
+    @include ms-lg10;
+    @include ms-xl8;
+    @include ms-xlPush2;
+    @include ms-lgPush1;
+    width: 100% !important;
+    top: 0 !important;
+    left: 0 !important;
+    padding-bottom: 10px;
+
+    .monthHeaderContainer {
+      display: grid;
+      grid-template-columns: 100%;
+      grid-template-rows: 64px;
+      grid-template-areas: "monthheader";
+      background-color: #F9FAFB;
+      border-color: #F9FAFB;
+      color: black;
+      justify-items: center;
+      align-items: center;
+      
+      .monthHeader {
+        grid-area: monthheader;
+      }
+    }
+    
+    .weekNamesContainer {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+      grid-template-rows: 24px;
+      grid-template-areas: "sun mon tue wed thu fri sat";
+      gap: 1px 1px;
+      background-color: rgb(223, 223, 223);
+      border: solid 1px rgb(223, 223, 223);
+      color: black;
+      justify-items: stretch;
+      align-items: stretch;
+  
+      .weekDay00 {
+        @include ms-bgColor-white;
+        text-align: center;
+        grid-area: sun;
+      }
+      .weekDay01 {
+        @include ms-bgColor-white;
+        text-align: center;
+        grid-area: mon;
+      }
+      .weekDay02 {
+        @include ms-bgColor-white;
+        text-align: center;
+        grid-area: tue;
+      }
+      .weekDay03 {
+        @include ms-bgColor-white;
+        text-align: center;
+        grid-area: wed;
+      }
+      .weekDay04 {
+        @include ms-bgColor-white;
+        text-align: center;
+        grid-area: thu;
+      }
+      .weekDay05 {
+        @include ms-bgColor-white;
+        text-align: center;
+        grid-area: fri;
+      }
+      .weekDay06 {
+        @include ms-bgColor-white;
+        text-align: center;
+        grid-area: sat;
+      }
+    }
+
+    .weekContainer {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+      grid-template-rows: auto;
+      grid-template-areas: "sun mon tue wed thu fri sat";
+      gap: 1px 1px;
+      background-color: rgb(223, 223, 223);
+      border-left: solid 1px rgb(223, 223, 223);
+      border-right: solid 1px rgb(223, 223, 223);
+      border-bottom: solid 1px rgb(223, 223, 223);
+      color: black;
+      justify-items: stretch;
+      align-items: stretch;
+  
+      .daySunday {
+        @include ms-bgColor-white;
+        grid-area: sun;
+      }
+      .dayMonday {
+        @include ms-bgColor-white;
+        grid-area: mon;
+      }
+      .dayTuesday {
+        @include ms-bgColor-white;
+        grid-area: tue;
+      }
+      .dayWednesday {
+        @include ms-bgColor-white;
+        grid-area: wed;
+      }
+      .dayThursday {
+        @include ms-bgColor-white;
+        grid-area: thu;
+      }
+      .dayFriday {
+        @include ms-bgColor-white;
+        grid-area: fri;
+      }
+      .daySaturday {
+        @include ms-bgColor-white;
+        grid-area: sat;
+      }
+
+      .dayOfMonth {
+        @include ms-bgColor-white;
+        padding: 0 0px;
+        border-width: 2px;
+      }
+      .notDayOfMonth {
+        @include ms-bgColor-neutralLight;
+        padding: 0 0px;
+        border-width: 2px;
+      }
+      .currentDay {
+        @include ms-bgColor-neutralTertiaryAlt;
+        padding: 0 0px;
+        border-width: 2px;
+      }
+      .selectedDay {
+        @include ms-bgColor-yellowLight;
+        padding: 0 0px;
+        border-width: 2px;
+      }
+      
+      .dayOfWeekContainer {
+        display: grid;
+        grid-template-columns: 4fr;
+        grid-template-rows: 1fr 1fr 1fr;
+        grid-template-areas: 
+          "dayheader"
+          "events"
+          "dayfooter";
+        @include ms-fontColor-neutralPrimaryAlt;
+        justify-items: stretch;
+        align-items: stretch;
+
+        .dayHeader {
+          grid-area: dayheader;
+          padding: 0 5px;
+          justify-self: flex-end;
+          align-self: flex-start;
+        }
+        .events {
+          grid-area: events;          
+          padding: 0 5px;
+          justify-self: center;
+          align-self: center;
+        }
+        .dayFooter {
+          grid-area: dayfooter;
+          padding: 0 5px;
+          justify-self: flex-end;
+          align-self: flex-start;
+        }
+      }
+
+      .dayOfWeekContainer:hover {
+        @include ms-bgColor-neutralLighterAlt;
+      }
+    }
+  }
+
+  .calendarTopContainer {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr 1fr;      
+      grid-template-rows: 1fr;
+      grid-template-areas: " leftbuttons monthdropdown yeardropdown rightbuttons ";
+      justify-items: stretch;
+      align-items: start;
+      margin: 0 8px;
+      padding: 4px;
+      @include ms-bgColor-themePrimary;
+
+      .itemLeftButtons {
+        grid-area: leftbuttons;
+        justify-self: start;
+      }
+      .itemMonthDropdown {
+          grid-area: monthdropdown;
+          justify-self: center;
+      }
+      .itemYearDropdown {
+        grid-area: yeardropdown;
+        justify-self: center;
+      }
+      .itemRightButtons {
+          grid-area: rightbuttons;
+          justify-self: end;
+      }
+
+      .calendarMonthSelector {
+        min-width: 100px;
+        max-width: 150px;
+        width: 100%;
+      }
+      .calendarYearSelector {        
+        min-width: 100px;
+        max-width: 150px;
+        width: 100%;
+      }
+ 
+      .iconButton {
+        // Our button
+        text-decoration: none;
+        height: 32px;
+    
+        // Primary Button
+        min-width: 52px;
+        @include ms-bgColor-themePrimary;
+        @include ms-borderColor-themePrimary;
+        @include ms-fontColor-white;
+    
+        // Basic Button
+        outline: transparent;
+        position: relative;
+        font-family: "Segoe UI WestEuropean","Segoe UI",-apple-system,BlinkMacSystemFont,Roboto,"Helvetica Neue",sans-serif;
+        -webkit-font-smoothing: antialiased;
+        font-size: $ms-font-size-m;
+        font-weight: $ms-font-weight-regular;
+        border-width: 0;
+        text-align: center;
+        cursor: pointer;
+        display: inline-block;
+        padding: 0 16px;
+    
+        .label {
+          font-weight: $ms-font-weight-semibold;
+          font-size: $ms-font-size-m;
+          height: 32px;
+          line-height: 32px;
+          margin: 0 4px;
+          vertical-align: top;
+          display: inline-block;
+        }
+      }
+    
+      .iconButton:hover {
+          @include ms-bgColor-themeDark;
+      }
+  }
+
+  @media (max-width: 900px) {
+    .calendarTopContainer {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      grid-template-rows: 1fr 1fr;
+      grid-template-areas: 
+        " leftbuttons rightbuttons "
+        " monthdropdown yeardropdown ";
+      justify-items: stretch;
+      align-items: start;
+      margin: 0 8px;
+      padding: 4px;
+      @include ms-bgColor-themePrimary;
+
+      .itemLeftButtons {
+        grid-area: leftbuttons;
+        justify-self: start;
+        align-self: center;
+      }
+      .itemMonthDropdown {
+        grid-area: monthdropdown;
+        justify-self: start;
+      }
+      .itemYearDropdown {
+        grid-area: yeardropdown;
+        justify-self: end;
+      }
+      .itemRightButtons {
+        grid-area: rightbuttons;
+        justify-self: end;
+        align-self: center;
+      }
+
+      .calendarMonthSelector {
+        width: 100px;
+      }
+      .calendarYearSelector {
+        width: 100px;
+      }
+    }
+  }
+}

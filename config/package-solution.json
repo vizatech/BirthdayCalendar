@@ -1,0 +1,14 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/spfx-build/package-solution.schema.json",
+  "solution": {
+    "name": "UKRENERGO Birthdays",
+    "id": "8b55a87f-09ba-4f02-8260-c613caa1701f",
+    "version": "1.0.2.2",
+    "includeClientSideAssets": true,
+    "skipFeatureDeployment": true,
+    "isDomainIsolated": false
+  },
+  "paths": {
+    "zippedPackage": "solution/ukrenergo-birthdays.sppkg"
+  }
+}

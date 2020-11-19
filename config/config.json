@@ -1,0 +1,19 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/spfx-build/config.2.0.schema.json",
+  "version": "2.0",
+  "bundles": {
+    "ukrenergo-birthdays-web-part": {
+      "components": [
+        {
+          "entrypoint": "./lib/webparts/ukrEnergoBirthdays/UkrEnergoBirthdaysWebPart.js",
+          "manifest": "./src/webparts/ukrEnergoBirthdays/UkrEnergoBirthdaysWebPart.manifest.json"
+        }
+      ]
+    }
+  },
+  "externals": {},
+  "localizedResources": {
+    "UkrEnergoBirthdaysDictionary": "lib/webparts/ukrEnergoBirthdays/loc/{locale}.js",
+    "PropertyControlStrings": "node_modules/@pnp/spfx-property-controls/lib/loc/{locale}.js"
+  }
+}
